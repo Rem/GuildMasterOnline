@@ -1,0 +1,26 @@
+<% if logged_in? %>
+  <form action='/characters' method="post">
+    <div>
+      Name:
+      <input type="text" name="name"><br>
+      <br>
+      Race:
+      <input type="text" name="race"><br>
+      <br>
+      Lore:
+      <input type="textarea" name="lore"><br>
+      <br>
+      Power:
+      <input type="text" name="power"><br>
+      <br>
+    </div>
+    Create Your Character:
+
+    <input type="submit" name="submit" id="submit">
+
+  </form>
+<%else%>
+  <h1>You must be logged in to create a new character</h1>
+  <br>
+  <h1><a href="/login">Login<a><h1>
+<%end%>
