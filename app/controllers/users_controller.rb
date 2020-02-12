@@ -27,9 +27,9 @@ class UsersController < ApplicationController
   end
 
   post '/login' do
-    user = User.find_by(:username => params[:username].downcase)
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
+    autorized_user?
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
       redirect to '/characters'
     else
       redirect to '/login'

@@ -1,1 +1,10 @@
-hello
+<%if logged_in?%>
+  <h1>Welcome, <%=current_user.username.capitalize %>!</h1>
+  <%else%>
+    <h1>Welcome to Guild Master Online!</h1>
+    <h2>A hub where Guild Masters can create Player Characters for their role playing and tabletop adventures.</h2>
+    <h3>Join GMO today</h3>
+    <br>
+    <button><a href="/signup">Sign up</a></button>
+    <button><a href="/login">Login</a></button>
+  <%end%>

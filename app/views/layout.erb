@@ -19,12 +19,14 @@
     <nav>
         <%if logged_in?%>
           <a href="/users/<%=current_user.username.downcase%>">Home<a>
+          <a href="/characters">All Characters  <a>
+          <a href="/characters/new"> Create Character </a>
+          <a href="/logout"> Log out   </a>
         <%else%>
           <a href="/">Home<a>
+          <a href="/login"> Login   </a>
+          <a href="/signup"> Sign up   </a>
         <%end%>
-        <a href="/characters">All Characters<a>
-        <a href="/characters/new"> Create a Character </a>
-        <a href="/logout"> Log Out </a>
     </nav>
 
     <div class="wrapper">
