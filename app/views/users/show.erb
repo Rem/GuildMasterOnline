@@ -1,0 +1,11 @@
+<h1><%= @user.username.capitalize %>'s Characters</h1>
+<br>
+<a href="/characters/new"> Create a Character </a>
+<a href="/characters">All Characters<a>
+<br>
+<br>
+<% @user.characters.each do |character| %>
+  <div>
+    <%= character.name %>
+  </div>
+<% end %>
