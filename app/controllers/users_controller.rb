@@ -9,9 +9,9 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    @user = User.new(:username => params[:username].downcase, :email => params[:email].downcase, :password => params[:password])
-    if @user.save
-      session[:user_id] = @user.id
+    user = User.new(:username => params[:username].downcase, :email => params[:email].downcase, :password => params[:password])
+    if user.save
+      session[:user_id] = user.id
       redirect to '/characters'
     else
       redirect to '/signup'

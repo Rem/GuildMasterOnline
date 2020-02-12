@@ -1,8 +1,9 @@
-<h3>All Characters</h3>
+<h1>All Characters</h1>
 
+<br>
 <% @characters.each do |character| %>
   <div>
-    <h3><a href="/characters/<%=character.id%>"><%= character.name %></a></h3>
-    <h5>By: <a href="/users/<%= character.user.username.downcase %>"><%=character.user.username.capitalize%></a></h5>
+    <h2><a href="/characters/<%=character.id%>"><%= character.name %></a>: <%=character.lore%></h2>
+    <h6>By: <a href="/users/<%= character.user.username.downcase %>"><%=character.user.username.capitalize%></a></h6>
   </div>
 <% end %>

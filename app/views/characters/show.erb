@@ -1,11 +1,14 @@
 <h1><%=@character.name%></h1>
-<h3><%=@character.race%></h3>
-<h3><%=@character.lore%></h3>
-<h3><%=@character.power%></h3>
+<h3>Race: <%=@character.race%></h3>
+<h3>Lore: <%=@character.lore%></h3>
+<h3>Power: <%=@character.power%></h3>
 <br>
-<form method="post" action="/chracters/<%=@character.id%>/delete">
-  <input id="hidden" type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete Character">
-</form>
 
-<a href="/characters/<%=@character.id%>/edit">Edit Character </a>
+<%if @character.user == current_user%>
+  <form method="post" action="/chracters/<%=@character.id%>/delete">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Character">
+  </form>
+
+  <a href="/characters/<%=@character.id%>/edit">Edit Character </a>
+<%end%>

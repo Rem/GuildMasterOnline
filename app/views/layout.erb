@@ -17,9 +17,24 @@
   </head>
   <body>
     <nav>
+        <%if logged_in?%>
+          <a href="/users/<%=current_user.username.downcase%>">Home<a>
+        <%else%>
+          <a href="/">Home<a>
+        <%end%>
+        <a href="/characters">All Characters<a>
+        <a href="/characters/new"> Create a Character </a>
+        <a href="/logout"> Log Out </a>
     </nav>
 
     <div class="wrapper">
+      <% if flash[:message] %>
+        <h3 style="color:green;"><%= flash[:message] %></h3>
+      <% end %>
+
+      <% if flash[:error] %>
+        <h3 style="color:red;"><%= flash[:error] %></h3>
+      <% end %>
 
         <%= yield %>
 

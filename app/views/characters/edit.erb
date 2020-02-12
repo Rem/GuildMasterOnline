@@ -1,0 +1,19 @@
+
+<h1>Edit your character</h1>
+<br>
+<a href="/users/<%=current_user.username.downcase%>">Home<a>
+<a href="/characters">All Characters<a>
+<br>
+<form method="post" action="/characters/<%=@character.id%>">
+<input id="hidden" type="hidden" name="_method" value="patch">
+Name
+<p><input type="text" name="name" value="<%=@character.name%>"></p><br>
+Race
+<p><input type="text" name="race" value="<%=@character.race%>"></p><br>
+Lore
+<p><input type="text" name="lore" value="<%=@character.lore%>"></p><br>
+Power
+<p><input type="text" name="power" value="<%=@character.power%>"></p><br>
+
+<input type="submit" value="Edit Character" id="submit">
+</form>
