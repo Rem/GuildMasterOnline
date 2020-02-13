@@ -4,6 +4,6 @@
 <% @characters.each do |character| %>
   <div>
     <h2><a href="/characters/<%=character.id%>"><%= character.name %></a>: <%=character.lore%></h2>
-    <h6>By: <a href="/users/<%= character.user.username.downcase %>"><%=character.user.username.capitalize%></a></h6>
+    <h6>By: <a href="/users/<%= character.user.slug %>"><%=character.user.username.capitalize%></a></h6>
   </div>
 <% end %>

@@ -20,7 +20,7 @@
   <body>
     <nav>
         <%if logged_in?%>
-          <a href="/users/<%=current_user.username.downcase%>">Home<a>
+          <a href="/users/<%=current_user.slug%>">Home<a>
           <a href="/characters">All Characters  <a>
           <a href="/characters/new"> Create Character </a>
           <a href="/logout"> Log out   </a>
