@@ -27,7 +27,6 @@ class UsersController < ApplicationController
   end
 
   post '/login' do
-    binding.pry
     autorized_user?
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id

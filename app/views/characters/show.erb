@@ -5,8 +5,8 @@
 <br>
 
 <%if @character.user == current_user%>
-  <form method="post" action="/chracters/<%=@character.id%>/delete">
-    <input id="hidden" type="hidden" name="_method" value="delete">
+  <form method="post" action="/characters/<%=@character.id%>/delete">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete Character">
   </form>
 
