@@ -59,7 +59,7 @@ class CharactersController < ApplicationController
       if logged_in?
         @character = Character.find_by_id(params[:id])
         if @character && @character.user == current_user
-          if @character.update(params)
+          if @character.update(name: params[:name],race: params[:race], lore: params[:lore], power: params[:power])
             flash[:message] = "Character succesfully updated!"
             redirect to "/characters/#{@character.id}"
           else
